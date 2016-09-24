@@ -1,0 +1,67 @@
+<!DOCTYPE <!DOCTYPE html>
+<html ng-app="wchatApp" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.IO Chat Example</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+  <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+  <!-- <link rel="stylesheet" href="/css/style.css"> -->
+  <script type="text/javascript" src="/services/socket.js"></script>
+  <script type="text/javascript" src="/directives/ctrl-enter-break-line.js"></script>
+  <script type="text/javascript" src="/directives/auto-scroll-to-bottom.js"></script>
+  <script type="text/javascript" src="/controllers/room.js"></script>
+  <script type="text/javascript" src="/controllers/message-creator.js"></script>
+  <link rel="stylesheet" href="/css/room.css">
+</head>
+<body>
+  <!-- <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul> -->
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">wchat</a>
+      </div>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right" ng-show="me">
+          <li>
+            <img ng-src="{{me.avatarUrl}}" title="{{me.name}}" class="img-rounded" />
+          </li>
+          <li>
+            <a href="" ng-click="logout()">Log out</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:100px;">
+    <!-- 使用ng-view放置一个占位符，AngularJS可以根据URL地址的不同载入对应的视图和控制器 -->
+    <div class="row" ng-view></div>
+  </div>
+  <script src="/js/main.js"></script> 
+  <script>
+  // 如果是与其他服务器建立连接则只需将 
+  /*  var socket = io.connect('http://localhost:3000');
+    socket.on('connected', function (data) {
+      $("input.usernameInput").val(data);
+    });*/
+  </script>
+</body>
+</html>

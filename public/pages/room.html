@@ -1,0 +1,18 @@
+<div class="col-md-12">
+<!-- 加入Angular的Controller, -->
+  <div class="panel panel-default room"><!-- 通过router.js指定了，无需再指定 ng-controller="RoomCtrl"  -->
+    <div class="panel-heading room-header">W-Chat</div>
+    <div class="panel-body room-content">
+      <div class="list-group messages" auto-scroll-to-bottom>
+        <div class="list-group-item message" ng-repeat="message in messages track by $index">
+          <div>MM 说：</div><div ng-bind-html="message | to_trusted"></div>
+        </div>
+      </div>
+      <form class="message-creator" ng-controller="MessageCreatorCtrl">
+        <div class="form-group">
+          <textarea required class="form-control message-input" ng-model="newMessage" parser ctrl-enter-break-line="createMessage()" placeholder="Ctrl+Enter to quick send your messages."></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

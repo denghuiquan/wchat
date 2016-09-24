@@ -1,0 +1,25 @@
+{
+  "name": "wchat",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "denmark"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "node"
+  ],
+  "directory":"public/bower_components",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "git://github.com/mbostock/d3.git#~3.2.8",
+    "jquery": "git://github.com/components/jquery.git#~2.0.3"
+  }
+}
